@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="English" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tkinter_gui module &mdash; School Management System 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=31252603"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pyqt_gui module" href="pyqt_gui.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            School Management System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Lab4-HawraaKhalil-RubaElHoussami</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyqt_gui.html">pyqt_gui module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tkinter_gui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.add_course"><code class="docutils literal notranslate"><span class="pre">add_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.add_instructor"><code class="docutils literal notranslate"><span class="pre">add_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.add_student"><code class="docutils literal notranslate"><span class="pre">add_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.assign_instructor"><code class="docutils literal notranslate"><span class="pre">assign_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.clear_course_entries"><code class="docutils literal notranslate"><span class="pre">clear_course_entries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.clear_instructor_entries"><code class="docutils literal notranslate"><span class="pre">clear_instructor_entries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.clear_search_entries"><code class="docutils literal notranslate"><span class="pre">clear_search_entries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.clear_student_entries"><code class="docutils literal notranslate"><span class="pre">clear_student_entries()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.delete_course"><code class="docutils literal notranslate"><span class="pre">delete_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.delete_instructor"><code class="docutils literal notranslate"><span class="pre">delete_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.delete_student"><code class="docutils literal notranslate"><span class="pre">delete_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.edit_course"><code class="docutils literal notranslate"><span class="pre">edit_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.edit_instructor"><code class="docutils literal notranslate"><span class="pre">edit_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.edit_student"><code class="docutils literal notranslate"><span class="pre">edit_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.perform_search"><code class="docutils literal notranslate"><span class="pre">perform_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.populate_listboxes"><code class="docutils literal notranslate"><span class="pre">populate_listboxes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.register_course"><code class="docutils literal notranslate"><span class="pre">register_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.save_course_changes"><code class="docutils literal notranslate"><span class="pre">save_course_changes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.save_instructor_changes"><code class="docutils literal notranslate"><span class="pre">save_instructor_changes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tkinter_gui.save_student_changes"><code class="docutils literal notranslate"><span class="pre">save_student_changes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tkinter_gui module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.add_course"><code class="docutils literal notranslate"><span class="pre">add_course()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.add_instructor"><code class="docutils literal notranslate"><span class="pre">add_instructor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.add_student"><code class="docutils literal notranslate"><span class="pre">add_student()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.assign_instructor"><code class="docutils literal notranslate"><span class="pre">assign_instructor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.clear_course_entries"><code class="docutils literal notranslate"><span class="pre">clear_course_entries()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.clear_instructor_entries"><code class="docutils literal notranslate"><span class="pre">clear_instructor_entries()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.clear_search_entries"><code class="docutils literal notranslate"><span class="pre">clear_search_entries()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.clear_student_entries"><code class="docutils literal notranslate"><span class="pre">clear_student_entries()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.delete_course"><code class="docutils literal notranslate"><span class="pre">delete_course()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.delete_instructor"><code class="docutils literal notranslate"><span class="pre">delete_instructor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.delete_student"><code class="docutils literal notranslate"><span class="pre">delete_student()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.edit_course"><code class="docutils literal notranslate"><span class="pre">edit_course()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.edit_instructor"><code class="docutils literal notranslate"><span class="pre">edit_instructor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.edit_student"><code class="docutils literal notranslate"><span class="pre">edit_student()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.perform_search"><code class="docutils literal notranslate"><span class="pre">perform_search()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.populate_listboxes"><code class="docutils literal notranslate"><span class="pre">populate_listboxes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.register_course"><code class="docutils literal notranslate"><span class="pre">register_course()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.save_course_changes"><code class="docutils literal notranslate"><span class="pre">save_course_changes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.save_instructor_changes"><code class="docutils literal notranslate"><span class="pre">save_instructor_changes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tkinter_gui.save_student_changes"><code class="docutils literal notranslate"><span class="pre">save_student_changes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyqt_gui.html">pyqt_gui module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">School Management System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Lab4-HawraaKhalil-RubaElHoussami</a></li>
+      <li class="breadcrumb-item active">tkinter_gui module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tkinter_gui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tkinter_gui">
+<span id="tkinter-gui-module"></span><h1>tkinter_gui module<a class="headerlink" href="#module-tkinter_gui" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.add_course">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">add_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#add_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.add_course" title="Link to this definition"></a></dt>
+<dd><p>Add a new course based on user input.</p>
+<p>Validates input, creates a new Course object, saves it, and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> -- If invalid data is entered or required fields are missing.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.add_instructor">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">add_instructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#add_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.add_instructor" title="Link to this definition"></a></dt>
+<dd><p>Add a new instructor based on user input.</p>
+<p>Validates input, creates a new Instructor object, saves it, and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> -- If invalid data is entered or required fields are missing.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.add_student">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">add_student</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#add_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.add_student" title="Link to this definition"></a></dt>
+<dd><p>Add a new student based on user input.</p>
+<p>Validates input, creates a new Student object, saves it, and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> -- If invalid data is entered or required fields are missing.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.assign_instructor">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">assign_instructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#assign_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.assign_instructor" title="Link to this definition"></a></dt>
+<dd><p>Assign an instructor to a course.</p>
+<p>Updates the course and instructor data to reflect the assignment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If the instructor or course ID does not exist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.clear_course_entries">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">clear_course_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#clear_course_entries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.clear_course_entries" title="Link to this definition"></a></dt>
+<dd><p>Clear all entry fields in the Courses tab.</p>
+<p>Resets course name, ID, and instructor ID entry fields to default state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.clear_instructor_entries">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">clear_instructor_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#clear_instructor_entries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.clear_instructor_entries" title="Link to this definition"></a></dt>
+<dd><p>Clear all entry fields in the Instructors tab.</p>
+<p>Resets instructor name, age, email, and ID entry fields to default state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.clear_search_entries">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">clear_search_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#clear_search_entries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.clear_search_entries" title="Link to this definition"></a></dt>
+<dd><p>Clear all entry fields in the Search tab.</p>
+<p>Resets student, instructor, and course search entry fields to default state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.clear_student_entries">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">clear_student_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#clear_student_entries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.clear_student_entries" title="Link to this definition"></a></dt>
+<dd><p>Clear all entry fields in the Students tab.</p>
+<p>Resets student name, age, email, and ID entry fields to default state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.delete_course">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">delete_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#delete_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.delete_course" title="Link to this definition"></a></dt>
+<dd><p>Delete the selected course from the system.</p>
+<p>Removes the course from the JSON file and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If the selected course does not exist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.delete_instructor">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">delete_instructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#delete_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.delete_instructor" title="Link to this definition"></a></dt>
+<dd><p>Delete the selected instructor from the system.</p>
+<p>Removes the instructor from the JSON file and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If the selected instructor does not exist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.delete_student">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">delete_student</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#delete_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.delete_student" title="Link to this definition"></a></dt>
+<dd><p>Delete the selected student from the system.</p>
+<p>Removes the student from the JSON file and updates the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If the selected student does not exist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.edit_course">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">edit_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#edit_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.edit_course" title="Link to this definition"></a></dt>
+<dd><p>Edit the selected course's details.</p>
+<p>Populates the course form with current details for editing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If no course is selected.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.edit_instructor">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">edit_instructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#edit_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.edit_instructor" title="Link to this definition"></a></dt>
+<dd><p>Edit the selected instructor's details.</p>
+<p>Populates the instructor form with current details for editing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If no instructor is selected.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.edit_student">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">edit_student</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#edit_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.edit_student" title="Link to this definition"></a></dt>
+<dd><p>Edit the selected student's details.</p>
+<p>Populates the student form with current details for editing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If no student is selected.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.load_data">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.load_data" title="Link to this definition"></a></dt>
+<dd><p>Load student, instructor, and course data from JSON files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> -- If any of the JSON files do not exist.</p></li>
+<li><p><strong>ValueError</strong> -- If the JSON data is invalid.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.perform_search">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">perform_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#perform_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.perform_search" title="Link to this definition"></a></dt>
+<dd><p>Perform a search based on the provided type.</p>
+<p>Searches for a student, instructor, or course by ID and displays the results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<em>str</em>) -- The type of entity to search for ('student', 'instructor', or 'course').</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> -- If no ID is entered or the entity is not found.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.populate_listboxes">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">populate_listboxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#populate_listboxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.populate_listboxes" title="Link to this definition"></a></dt>
+<dd><p>Populate listboxes with students, instructors, and courses.</p>
+<p>Clears existing entries and populates them with data from the loaded dictionaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If required keys are missing in the loaded data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.register_course">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">register_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#register_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.register_course" title="Link to this definition"></a></dt>
+<dd><p>Register a student for a course.</p>
+<p>Registers the student for the selected course based on their IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> -- If the student or course ID does not exist.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.save_course_changes">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">save_course_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#save_course_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.save_course_changes" title="Link to this definition"></a></dt>
+<dd><p>Save changes made to the course's details.</p>
+<p>Updates the course's information and refreshes the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>course_id</strong> (<em>str</em>) -- The ID of the course being edited.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> -- If required fields are empty or ID is changed.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.save_instructor_changes">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">save_instructor_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#save_instructor_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.save_instructor_changes" title="Link to this definition"></a></dt>
+<dd><p>Save changes made to the instructor's details.</p>
+<p>Updates the instructor's information and refreshes the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instructor_id</strong> (<em>str</em>) -- The ID of the instructor being edited.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> -- If required fields are empty or ID is changed.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tkinter_gui.save_student_changes">
+<span class="sig-prename descclassname"><span class="pre">tkinter_gui.</span></span><span class="sig-name descname"><span class="pre">save_student_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tkinter_gui.html#save_student_changes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tkinter_gui.save_student_changes" title="Link to this definition"></a></dt>
+<dd><p>Save changes made to the student's details.</p>
+<p>Updates the student's information and refreshes the listbox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>student_id</strong> (<em>str</em>) -- The ID of the student being edited.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> -- If required fields are empty or ID is changed.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pyqt_gui.html" class="btn btn-neutral float-left" title="pyqt_gui module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Hawraa and Ruba.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
