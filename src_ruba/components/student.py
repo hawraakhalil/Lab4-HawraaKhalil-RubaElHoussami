@@ -7,10 +7,12 @@ class Student(Person):
         self.registered_courses = []
 
     def _register_course(self, course_id: int):
-        self.registered_courses.append(course_id)
+        if course_id not in self.registered_courses:
+            self.registered_courses.append(course_id)
     
     def _unregister_course(self, course_id: int):
-        self.registered_courses.remove(course_id)
+        if course_id in self.registered_courses:
+            self.registered_courses.remove(course_id)
 
     def __repr__(self):
         """

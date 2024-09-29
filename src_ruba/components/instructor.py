@@ -7,10 +7,12 @@ class Instructor(Person):
         self.assigned_courses = []
 
     def _add_course(self, course_id: int):
-        self.assigned_courses.append(course_id)
+        if course_id not in self.assigned_courses:
+            self.assigned_courses.append(course_id)
     
     def _remove_course(self, course: int):
-        self.assigned_courses.remove(course)
+        if course in self.assigned_courses:
+            self.assigned_courses.remove(course)
     
     def __repr__(self):
         """

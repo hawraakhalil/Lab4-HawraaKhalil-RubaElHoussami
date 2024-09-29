@@ -563,7 +563,7 @@ class SchoolManagementSystem(QMainWindow):
         """
         instructor_id = self.select_delete_instructor_combo.currentText().split(":")[1].strip()
         message, status = remove_instructor(int(instructor_id))
-
+        print(message)
         if status == 200:
             self.show_message(message["message"], "green")
             self.update_dropdowns()
@@ -684,13 +684,15 @@ class SchoolManagementSystem(QMainWindow):
         :rtype: None
         :raises ValueError: If the retrieval fails, an appropriate message is shown.
         """
+
         students, status = get_students()
         self.view_students_list.clear()
-        
+
         if status == 200 and students:
-            for student in students['students'].values():
-                courses = get_student_courses(student.student_id)
-                course_names = ", ".join([course.name for course in courses]) if courses else "No courses"
+            for student_id in students['students']:
+                student = students['students'][student_id]
+                courses, _ = get_student_courses(student.registered_courses)
+                course_names = ", ".join(courses['courses']) if courses['courses'] else "No courses"
                 self.view_students_list.addItem(f"Name: {student.name}, ID: {student.student_id}, Email: {student._email}")
                 self.view_students_list.addItem(f"Courses: {course_names}")
                 self.view_students_list.addItem("")
@@ -712,9 +714,10 @@ class SchoolManagementSystem(QMainWindow):
         self.view_instructors_list.clear()
         
         if status == 200 and instructors:
-            for instructor in instructors['instructors'].values():
-                courses = get_instructor_courses(instructor.instructor_id)
-                course_names = ", ".join([course.name for course in courses]) if courses else "No courses"
+            for instructor_id in instructors['instructors']:
+                instructor = instructors['instructors'][instructor_id]
+                courses, _ = get_instructor_courses(instructor.assigned_courses)
+                course_names = ", ".join(courses['courses']) if courses['courses'] else "No courses"
                 self.view_instructors_list.addItem(f"Name: {instructor.name}, ID: {instructor.instructor_id}, Email: {instructor._email}")
                 self.view_instructors_list.addItem(f"Courses: {course_names}")
                 self.view_instructors_list.addItem("")
@@ -756,14 +759,23 @@ class SchoolManagementSystem(QMainWindow):
         name = self.search_student_name_entry.text().strip()
         student_id = self.search_student_id_entry.text().strip()
         email = self.search_student_email_entry.text().strip()
-        
-        students, status = search_students(name, student_id, email)
+
+        if name != "":
+            students, status = search_students("name", name)
+        elif student_id != "":
+            students, status = search_students("id", student_id)
+        elif email != "":
+            students, status = search_students("email", email)
+        else:
+            self.show_message("Invalid search type", "red")
+            return
+
         self.view_students_list.clear()
         
         if status == 200 and students:
             for student in students['students']:
-                courses = get_student_courses(student.student_id)
-                course_names = ", ".join([course.name for course in courses]) if courses else "No courses"
+                courses, _ = get_student_courses(student.registered_courses)
+                course_names = ", ".join(courses['courses']) if courses['courses'] else "No courses"
                 self.view_students_list.addItem(f"Name: {student.name}, ID: {student.student_id}, Email: {student._email}")
                 self.view_students_list.addItem(f"Courses: {course_names}")
                 self.view_students_list.addItem("")
@@ -786,13 +798,22 @@ class SchoolManagementSystem(QMainWindow):
         instructor_id = self.search_instructor_id_entry.text().strip()
         email = self.search_instructor_email_entry.text().strip()
         
-        instructors, status = search_instructors(name, instructor_id, email)
+        if name != "":
+            instructors, status = search_instructors("name", name)
+        elif instructor_id != "":
+            instructors, status = search_instructors("id", instructor_id)
+        elif email != "":
+            instructors, status = search_instructors("email", email)
+        else:
+            self.show_message("Invalid search type", "red")
+            return
+        
         self.view_instructors_list.clear()
         
         if status == 200 and instructors:
             for instructor in instructors['instructors']:
-                courses = get_instructor_courses(instructor.instructor_id)
-                course_names = ", ".join([course.name for course in courses]) if courses else "No courses"
+                courses, _ = get_instructor_courses(instructor.assigned_courses)
+                course_names = ", ".join(courses['courses']) if courses['courses'] else "No courses"
                 self.view_instructors_list.addItem(f"Name: {instructor.name}, ID: {instructor.instructor_id}, Email: {instructor._email}")
                 self.view_instructors_list.addItem(f"Courses: {course_names}")
                 self.view_instructors_list.addItem("")
