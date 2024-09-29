@@ -8,7 +8,7 @@ The school management system combining Tkinter and PyQt documented implementatio
 
 ## Features
 
-All three versions of the system include the following features:
+Both versions of the system include the following features:
 - **Student Management**: Add, edit, delete student records.
 - **Instructor Management**: Add, edit, delete instructor records.
 - **Course Management**: Add, edit, delete course records.
@@ -32,16 +32,18 @@ All three versions of the system include the following features:
 - Python 3.x
 - Required Python libraries: 
   - Tkinter (for `tkinter_gui`)
-  - PyQt5 (for `pyqt_json_gui` and `pyqt_db_gui`)
+  - PyQt5 (for `pyqt_gui`)
 
 ### Installation Instructions
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/school-management-system.git
-   cd school-management-system```
+   git clone https://github.com/hawraakhalil/Lab4-HarwaaKhalil-RubaElHoussami.git
+   cd Lab4-HarwaaKhalil-RubaElHoussami
+   ```
 2. Install the required Python packages:
    ```bash
-   pip install pyqt5```
+   pip install pyqt5
+   ```
 
 ## Usage
 
@@ -50,7 +52,7 @@ To run the Tkinter version:
    ```bash
    python tkinter_gui.py
  ```
-### Running the PyQt GUI (pyqt_json_gui)
+### Running the PyQt GUI (`pyqt_gui`)
 To run the PyQt version that uses files for data storage:
    ```bash
    python pyqt_gui.py
@@ -58,7 +60,5 @@ To run the PyQt version that uses files for data storage:
 ## Data Storage
 - **File-Based GUIs**: Data is stored locally in JSON/CSV/Pickle files. Ensure that you have read and write access to the working directory.
 
-
 ## License
-
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
