@@ -412,7 +412,7 @@ class SchoolManagementSystem(QMainWindow):
         name = self.student_name_entry.text().strip()
         age = self.student_age_entry.text().strip()
         email = self.student_email_entry.text().strip()
-        message, status = register_student(name, age, email)
+        message, status = register_student(name, int(age), email)
 
         if status == 200:
             self.student_name_entry.clear()
@@ -518,7 +518,7 @@ class SchoolManagementSystem(QMainWindow):
         name = self.instructor_name_entry.text().strip()
         age = self.instructor_age_entry.text().strip()
         email = self.instructor_email_entry.text().strip()
-        message, status = register_instructor(name, age, email)
+        message, status = register_instructor(name, int(age), email)
 
         if status == 200:
             self.instructor_name_entry.clear()
